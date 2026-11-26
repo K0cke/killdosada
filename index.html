@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KILL DOSADA</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./img/logo.png" type="image/x-icon">
+</head>
+<body>
+    <div id="navbar" class="navbar">
+        <!-- logo -->
+        <div id="logo" class="logo">
+            <img src="./img/logo.png" alt="logo">
+        </div>
+
+        <!-- linkovi (na desktopu u navbaru, na telefonu idu u hamburger) -->
+        <div id="navmeni" class="navmeni">
+            <a href="#navbar" class="mobilni-u-meni">POCETNA STRANICA</a>
+            <a href="#" class="mobilni-u-meni">RANDOMIZER</a>
+            <a href="#" data-user>NALOG</a>
+            <a href="#">O NAMA</a>
+            <a href="#">FEEDBACK</a>
+            <a href="#" class="odjava" data-user data-logout>ODJAVI SE</a>
+        </div>
+
+        <!-- pretraga -->
+        <div id="search" class="search">
+            <span class="search-icon">🔍</span>
+            <input type="text" placeholder="" id="searchInput" aria-label="Pretraga">
+        </div>
+
+        
+        <a href="#" class="login mobilni-u-meni" data-guest data-open="loginModal">Log in</a>
+
+        <!-- hamburger menu  -->
+        <div class="burger-wrap">
+            <button id="burgerBtn" class="burger-btn" aria-label="Meni" aria-expanded="false" aria-controls="burgerMeni">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div id="burgerMeni" class="burger-meni">
+                <!-- JS ovde automatski ubacuje stavke za telefon -->
+            </div>
+        </div>
+    </div>
+
+    <!-- log in popup -->
+    <dialog id="loginModal" class="modal">
+        <div class="modal-telo">
+            <button type="button" class="modal-close" data-close aria-label="Zatvori">&times;</button>
+            <h2>Log in</h2>
+            <form>
+                <div class="polje">
+                    <input type="email" name="email" id="loginEmail" placeholder=" " autocomplete="email" required>
+                    <label for="loginEmail">Email</label>
+                </div>
+                <div class="polje">
+                    <input type="password" name="lozinka" id="loginLozinka" placeholder=" " autocomplete="current-password" required>
+                    <label for="loginLozinka">Lozinka</label>
+                </div>
+                <div class="red">
+                    <label><input type="checkbox" class="prikazi"> Prikaži lozinku</label>
+                    <a href="#">Zaboravljena lozinka?</a>
+                </div>
+                <button class="dugme">Prijavi se</button>
+                <p class="mali">Nemaš nalog? <a href="#" data-open="signupModal">Registruj se</a></p>
+            </form>
+        </div>
+    </dialog>
+
+    <!-- sign up popup -->
+    <dialog id="signupModal" class="modal">
+        <div class="modal-telo">
+            <button type="button" class="modal-close" data-close aria-label="Zatvori">&times;</button>
+            <h2>Sign up</h2>
+            <form>
+                <div class="polje">
+                    <input type="text" name="ime" id="signupIme" placeholder=" " autocomplete="username" minlength="3" required>
+                    <label for="signupIme">Korisničko ime</label>
+                </div>
+                <div class="polje">
+                    <input type="email" name="email" id="signupEmail" placeholder=" " autocomplete="email" required>
+                    <label for="signupEmail">Email</label>
+                </div>
+                <div class="polje">
+                    <input type="password" name="lozinka" id="signupLozinka" placeholder=" " autocomplete="new-password" minlength="8" required>
+                    <label for="signupLozinka">Lozinka</label>
+                </div>
+                <div class="red">
+                    <label><input type="checkbox" class="prikazi"> Prikaži lozinku</label>
+                    <small>Najmanje 8 karaktera</small>
+                </div>
+                <button class="dugme">Napravi nalog</button>
+                <p class="mali">Već imaš nalog? <a href="#" data-open="loginModal">Prijavi se</a></p>
+            </form>
+        </div>
+    </dialog>
+
+    <script src="./script.js"></script>
+</body>
+</html>
